@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northstar Learning Advisory - Strategy · Capability · Execution</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAF9F6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .page {
+      padding: 2.5rem 2.5rem 2rem;
+      max-width: 680px;
+      background: #FAF9F6;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #4B4F4A;
+      margin: 0 auto;
+    }
+
+    .header {
+      border-bottom: 1.5px solid #4B4F4A;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    .wordmark {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      color: #4B4F4A;
+      line-height: 1.1;
+    }
+    
+    .tagline {
+      font-size: 11px;
+      color: #7A8B76;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    
+    .mission-block {
+      max-width: 255px;
+      text-align: right;
+    }
+    
+    .mission-block p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #7A8B76;
+      font-style: italic;
+    }
+
+    .belief-strip {
+      background: #DDE8DF;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    
+    .b-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7A8B76;
+      white-space: nowrap;
+    }
+    
+    .b-text {
+      font-size: 12.5px;
+      color: #4B4F4A;
+      line-height: 1.6;
+    }
+    
+    .b-text strong { font-weight: 500; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7A8B76;
+      margin-bottom: 10px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      background: #FAF9F6;
+      border: 0.5px solid #B7C8B5;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+    
+    .card-title {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #4B4F4A;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    
+    .card-title i { font-size: 15px; color: #7A8B76; }
+
+    .services-list { 
+      list-style: none; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 3px; 
+    }
+    
+    .services-list li {
+      font-size: 11.5px;
+      color: #4B4F4A;
+      opacity: 0.75;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    
+    .services-list li::before {
+      content: '—';
+      color: #B7C8B5;
+      flex-shrink: 0;
+    }
+
+    .differentiators {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    
+    .diff-item {
+      background: #E8E6E1;
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+    
+    .diff-num {
+      font-size: 17px;
+      font-weight: 500;
+      color: #B7C8B5;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    
+    .diff-title {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: #4B4F4A;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    
+    .diff-desc {
+      font-size: 11px;
+      color: #4B4F4A;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+
+    .signature-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    
+    .sig-card {
+      background: #DDE8DF;
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+    }
+    
+    .sig-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: #4B4F4A;
+      margin-bottom: 4px;
+    }
+    
+    .sig-desc {
+      font-size: 11px;
+      color: #4B4F4A;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    .footer {
+      border-top: 0.5px solid #B7C8B5;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .clients-row { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 6px; 
+    }
+    
+    .chip {
+      font-size: 11px;
+      background: #E8E6E1;
+      border-radius: 100px;
+      padding: 3px 10px;
+      color: #4B4F4A;
+      opacity: 0.85;
+    }
+    
+    .contact {
+      font-size: 11.5px;
+      color: #7A8B76;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mission-block {
+        max-width: 100%;
+        text-align: left;
+      }
+
+      .belief-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .differentiators {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .signature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="wordmark">Northstar Learning Advisory</div>
+      <div class="tagline">Strategy · Capability · Execution</div>
+    </div>
+    <div class="mission-block">
+      <p>We help organizations build the capability systems leaders need to thrive in uncertainty.</p>
+    </div>
+  </div>
+
+  <div class="belief-strip">
+    <div class="b-label">Core belief</div>
+    <div class="b-text">Most organizations don't have a knowledge problem — they have a <strong>capability translation problem</strong>, a <strong>decision-making problem</strong>, and an <strong>execution problem</strong>. Northstar closes the gap between information and impact.</div>
+  </div>
+
+  <div class="section-label">What we do</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-compass" aria-hidden="true"></i> Leadership & capability strategy</div>
+      <ul class="services-list">
+        <li>Leadership capability frameworks</li>
+        <li>AI readiness strategy</li>
+        <li>Organizational capability mapping</li>
+        <li>Succession & pipeline planning</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-refresh" aria-hidden="true"></i> Learning transformation</div>
+      <ul class="services-list">
+        <li>Enterprise learning strategy</li>
+        <li>Curriculum architecture</li>
+        <li>Learning operations optimization</li>
+        <li>Measurement & impact strategy</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-cpu" aria-hidden="true"></i> AI-enabled knowledge systems</div>
+      <ul class="services-list">
+        <li>Knowledge hub design</li>
+        <li>SOP transformation & governance</li>
+        <li>Workflow learning systems</li>
+        <li>Decision-support learning tools</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-school" aria-hidden="true"></i> Executive education & facilitation</div>
+      <ul class="services-list">
+        <li>Leadership offsites & workshops</li>
+        <li>Critical thinking programs</li>
+        <li>Strategic decision-making simulations</li>
+        <li>Keynote speaking</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top: 1.25rem;">What makes us different</div>
+  <div class="differentiators">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div class="diff-title">Learning tied to business performance</div>
+      <div class="diff-desc">We focus on decision quality, leadership behavior, and measurable outcomes — not content delivery.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div class="diff-title">Built for complex organizations</div>
+      <div class="diff-desc">Specialists in large-scale operational environments where speed and ambiguity are constant.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div class="diff-title">Systems, not one-off training</div>
+      <div class="diff-desc">We build scalable ecosystems: governance, pathways, AI-enabled knowledge, and operational infrastructure.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div class="diff-title">Human + AI capability design</div>
+      <div class="diff-desc">We help organizations decide what AI should do, what humans should do, and how learning must evolve.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">05</div>
+      <div class="diff-title">Executive-level credibility</div>
+      <div class="diff-desc">Enterprise operations, executive education, learning science, and real-world transformation leadership.</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top: 1.25rem;">Signature offerings</div>
+  <div class="signature-row">
+    <div class="sig-card">
+      <div class="sig-name">The Capability Operating System™</div>
+      <div class="sig-desc">A full organizational capability framework aligning leadership expectations, learning pathways, AI tools, and performance metrics.</div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-name">AI Optimization for Leaders™</div>
+      <div class="sig-desc">Executive workshop series helping leaders optimize AI integration, improve decision-making, and lead adaptive teams.</div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-name">The Human Side of AI™</div>
+      <div class="sig-desc">Staying in touch and in tune while navigating an AI-driven world — keeping people connected, creative, and grounded.</div>
+    </div>
+    <div class="sig-card">
+      <div class="sig-name">Leading Through Uncertainty™</div>
+      <div class="sig-desc">A strategic leadership series focused on ambiguity, decision-making, critical thinking, and execution under pressure.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <div class="section-label" style="margin-bottom: 7px;">We work with</div>
+      <div class="clients-row">
+        <span class="chip">Large corporations</span>
+        <span class="chip">Small businesses</span>
+        <span class="chip">Universities</span>
+        <span class="chip">Healthcare systems</span>
+        <span class="chip">Nonprofits</span>
+        <span class="chip">Government agencies</span>
+      </div>
+    </div>
+    <div class="contact">northstarlearningadvisory.com</div>
+  </div>
+
+</div>
+
+</body>
+</html>
