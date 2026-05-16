@@ -64,7 +64,7 @@
       background: #DDE8DF;
       border-radius: 12px;
       padding: 1rem 1.25rem;
-      margin-bottom: 14px;
+      margin-bottom: 1.5rem;
       display: flex;
       gap: 1.75rem;
       align-items: center;
@@ -86,6 +86,45 @@
     }
     
     .b-text strong { font-weight: 500; }
+
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.5rem;
+      border-bottom: 1.5px solid #B7C8B5;
+    }
+
+    .tab-button {
+      padding: 1rem 1.25rem;
+      font-size: 13px;
+      font-weight: 500;
+      color: #7A8B76;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tab-button:hover {
+      color: #4B4F4A;
+    }
+
+    .tab-button.active {
+      color: #4B4F4A;
+      border-bottom-color: #4B4F4A;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
 
     .section-label {
       font-size: 10px;
@@ -215,6 +254,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 1.5rem;
     }
     
     .clients-row { 
@@ -259,6 +299,15 @@
         gap: 0.75rem;
       }
 
+      .tabs {
+        flex-wrap: wrap;
+      }
+
+      .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 12px;
+      }
+
       .grid-2 {
         grid-template-columns: 1fr;
       }
@@ -297,92 +346,108 @@
     <div class="b-text">Most organizations don't have a knowledge problem — they have a <strong>capability translation problem</strong>, a <strong>decision-making problem</strong>, and an <strong>execution problem</strong>. Northstar closes the gap between information and impact.</div>
   </div>
 
-  <div class="section-label">What we do</div>
-  <div class="grid-2">
-    <div class="card">
-      <div class="card-title"><i class="ti ti-compass" aria-hidden="true"></i> Leadership & capability strategy</div>
-      <ul class="services-list">
-        <li>Leadership capability frameworks</li>
-        <li>AI readiness strategy</li>
-        <li>Organizational capability mapping</li>
-        <li>Succession & pipeline planning</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-refresh" aria-hidden="true"></i> Learning transformation</div>
-      <ul class="services-list">
-        <li>Enterprise learning strategy</li>
-        <li>Curriculum architecture</li>
-        <li>Learning operations optimization</li>
-        <li>Measurement & impact strategy</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-cpu" aria-hidden="true"></i> AI-enabled knowledge systems</div>
-      <ul class="services-list">
-        <li>Knowledge hub design</li>
-        <li>SOP transformation & governance</li>
-        <li>Workflow learning systems</li>
-        <li>Decision-support learning tools</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-school" aria-hidden="true"></i> Executive education & facilitation</div>
-      <ul class="services-list">
-        <li>Leadership offsites & workshops</li>
-        <li>Critical thinking programs</li>
-        <li>Strategic decision-making simulations</li>
-        <li>Keynote speaking</li>
-      </ul>
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="switchTab('what-we-do')">What we do</button>
+    <button class="tab-button" onclick="switchTab('differentiators')">What makes us different</button>
+    <button class="tab-button" onclick="switchTab('offerings')">Signature offerings</button>
+  </div>
+
+  <!-- Tab 1: What We Do -->
+  <div id="what-we-do" class="tab-content active">
+    <div class="section-label">What we do</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title"><i class="ti ti-compass" aria-hidden="true"></i> Leadership & capability strategy</div>
+        <ul class="services-list">
+          <li>Leadership capability frameworks</li>
+          <li>AI readiness strategy</li>
+          <li>Organizational capability mapping</li>
+          <li>Succession & pipeline planning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="ti ti-refresh" aria-hidden="true"></i> Learning transformation</div>
+        <ul class="services-list">
+          <li>Enterprise learning strategy</li>
+          <li>Curriculum architecture</li>
+          <li>Learning operations optimization</li>
+          <li>Measurement & impact strategy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="ti ti-cpu" aria-hidden="true"></i> AI-enabled knowledge systems</div>
+        <ul class="services-list">
+          <li>Knowledge hub design</li>
+          <li>SOP transformation & governance</li>
+          <li>Workflow learning systems</li>
+          <li>Decision-support learning tools</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="ti ti-school" aria-hidden="true"></i> Executive education & facilitation</div>
+        <ul class="services-list">
+          <li>Leadership offsites & workshops</li>
+          <li>Critical thinking programs</li>
+          <li>Strategic decision-making simulations</li>
+          <li>Keynote speaking</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top: 1.25rem;">What makes us different</div>
-  <div class="differentiators">
-    <div class="diff-item">
-      <div class="diff-num">01</div>
-      <div class="diff-title">Learning tied to business performance</div>
-      <div class="diff-desc">We focus on decision quality, leadership behavior, and measurable outcomes — not content delivery.</div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">02</div>
-      <div class="diff-title">Built for complex organizations</div>
-      <div class="diff-desc">Specialists in large-scale operational environments where speed and ambiguity are constant.</div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">03</div>
-      <div class="diff-title">Systems, not one-off training</div>
-      <div class="diff-desc">We build scalable ecosystems: governance, pathways, AI-enabled knowledge, and operational infrastructure.</div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">04</div>
-      <div class="diff-title">Human + AI capability design</div>
-      <div class="diff-desc">We help organizations decide what AI should do, what humans should do, and how learning must evolve.</div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">05</div>
-      <div class="diff-title">Executive-level credibility</div>
-      <div class="diff-desc">Enterprise operations, executive education, learning science, and real-world transformation leadership.</div>
+  <!-- Tab 2: What Makes Us Different -->
+  <div id="differentiators" class="tab-content">
+    <div class="section-label">What makes us different</div>
+    <div class="differentiators">
+      <div class="diff-item">
+        <div class="diff-num">01</div>
+        <div class="diff-title">Learning tied to business performance</div>
+        <div class="diff-desc">We focus on decision quality, leadership behavior, and measurable outcomes — not content delivery.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-num">02</div>
+        <div class="diff-title">Built for complex organizations</div>
+        <div class="diff-desc">Specialists in large-scale operational environments where speed and ambiguity are constant.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-num">03</div>
+        <div class="diff-title">Systems, not one-off training</div>
+        <div class="diff-desc">We build scalable ecosystems: governance, pathways, AI-enabled knowledge, and operational infrastructure.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-num">04</div>
+        <div class="diff-title">Human + AI capability design</div>
+        <div class="diff-desc">We help organizations decide what AI should do, what humans should do, and how learning must evolve.</div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-num">05</div>
+        <div class="diff-title">Executive-level credibility</div>
+        <div class="diff-desc">Enterprise operations, executive education, learning science, and real-world transformation leadership.</div>
+      </div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top: 1.25rem;">Signature offerings</div>
-  <div class="signature-row">
-    <div class="sig-card">
-      <div class="sig-name">The Capability Operating System™</div>
-      <div class="sig-desc">A full organizational capability framework aligning leadership expectations, learning pathways, AI tools, and performance metrics.</div>
-    </div>
-    <div class="sig-card">
-      <div class="sig-name">AI Optimization for Leaders™</div>
-      <div class="sig-desc">Executive workshop series helping leaders optimize AI integration, improve decision-making, and lead adaptive teams.</div>
-    </div>
-    <div class="sig-card">
-      <div class="sig-name">The Human Side of AI™</div>
-      <div class="sig-desc">Staying in touch and in tune while navigating an AI-driven world — keeping people connected, creative, and grounded.</div>
-    </div>
-    <div class="sig-card">
-      <div class="sig-name">Leading Through Uncertainty™</div>
-      <div class="sig-desc">A strategic leadership series focused on ambiguity, decision-making, critical thinking, and execution under pressure.</div>
+  <!-- Tab 3: Signature Offerings -->
+  <div id="offerings" class="tab-content">
+    <div class="section-label">Signature offerings</div>
+    <div class="signature-row">
+      <div class="sig-card">
+        <div class="sig-name">The Capability Operating System™</div>
+        <div class="sig-desc">A full organizational capability framework aligning leadership expectations, learning pathways, AI tools, and performance metrics.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-name">AI Optimization for Leaders™</div>
+        <div class="sig-desc">Executive workshop series helping leaders optimize AI integration, improve decision-making, and lead adaptive teams.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-name">The Human Side of AI™</div>
+        <div class="sig-desc">Staying in touch and in tune while navigating an AI-driven world — keeping people connected, creative, and grounded.</div>
+      </div>
+      <div class="sig-card">
+        <div class="sig-name">Leading Through Uncertainty™</div>
+        <div class="sig-desc">A strategic leadership series focused on ambiguity, decision-making, critical thinking, and execution under pressure.</div>
+      </div>
     </div>
   </div>
 
@@ -402,6 +467,24 @@
   </div>
 
 </div>
+
+<script>
+  function switchTab(tabName) {
+    // Hide all tab contents
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // Show selected tab content
+    document.getElementById(tabName).classList.add('active');
+
+    // Add active class to clicked button
+    event.target.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
