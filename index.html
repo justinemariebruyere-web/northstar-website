@@ -28,7 +28,7 @@
       margin-bottom: 1.5rem;
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: flex-start;
       gap: 1rem;
     }
 
@@ -49,13 +49,13 @@
     }
     
     .mission-block {
-      max-width: 255px;
+      flex: 1;
       text-align: right;
     }
     
     .mission-block p {
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.5;
       color: #7A8B76;
       font-style: italic;
     }
@@ -67,7 +67,7 @@
       margin-bottom: 1.5rem;
       display: flex;
       gap: 1.75rem;
-      align-items: center;
+      align-items: flex-start;
     }
     
     .b-label {
@@ -77,6 +77,7 @@
       text-transform: uppercase;
       color: #7A8B76;
       white-space: nowrap;
+      padding-top: 2px;
     }
     
     .b-text {
@@ -251,7 +252,7 @@
       padding-top: 1rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 1.5rem;
@@ -289,7 +290,6 @@
       }
 
       .mission-block {
-        max-width: 100%;
         text-align: left;
       }
 
@@ -457,6 +457,8 @@
       <div class="clients-row">
         <span class="chip">Large corporations</span>
         <span class="chip">Small businesses</span>
+        <span class="chip">Public education</span>
+        <span class="chip">Private education</span>
         <span class="chip">Universities</span>
         <span class="chip">Healthcare systems</span>
         <span class="chip">Nonprofits</span>
